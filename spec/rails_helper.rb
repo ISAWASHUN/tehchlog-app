@@ -3,7 +3,7 @@ require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -31,7 +31,7 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.fixture_path = "#{Rails.root}/spec/fixtures"
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
@@ -63,8 +63,8 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 
   g.test_framework :rspec, # ここから5行を追記
-        fixtures: false, # テストDBにレコードを作るfixtureの作成をスキップ(FactoryBotを使用するため)
-        view_specs: false, # ビューファイル用のスペックを作成しない
-        helper_specs: false, # ヘルパーファイル用のスペックを作成しない
-        routing_specs: false # routes.rb用のスペックファイル作成しない
+                   fixtures: false, # テストDBにレコードを作るfixtureの作成をスキップ(FactoryBotを使用するため)
+                   view_specs: false, # ビューファイル用のスペックを作成しない
+                   helper_specs: false, # ヘルパーファイル用のスペックを作成しない
+                   routing_specs: false # routes.rb用のスペックファイル作成しない
 end
