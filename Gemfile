@@ -69,6 +69,7 @@ group :development do
   gem 'rubocop-performance', require: false # 追加
   gem 'rubocop-rails', require: false # 追加
   gem 'rubocop-rspec' # 追加
+  gem 'spring-commands-rspec'
 end
 
 group :test do
@@ -76,4 +77,6 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
